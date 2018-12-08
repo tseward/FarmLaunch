@@ -1,0 +1,74 @@
+Deployment_TargetEnvironment=DataCenter
+Deployment_TargetEnvironmentSubtype=ProdBubble
+GridFarmId=1
+GridFarmLabel=Prod
+
+#Farm
+RouteToSameRoleIfPossible=true
+#PrebakedDBSnapshotShare=\\serverName\share #contains *.bak; filename must start with role (Usage)
+
+#Diagnostics
+DiagnosticsULSLocation=C:\ULS
+DiagnosticsLogCutInterval=1
+DiagnosticsEventLogFloodProtectionEnabled=true
+DiagnosticsLogMaxDiskSpaceUsageEnabled=13
+DiagnosticsLogDiskSpaceUsageGB=3
+#ULSMaxLoggingGapInMilliseconds=100
+ULSExpandForcedMessages=true
+ULSExpandCachedMessages=true
+
+#Usage Service
+CreateServiceApplicationUsage=true
+DB-Usage-1-NA-Usage=SqlServerName
+#UsageServiceLogDir=E:\Usage
+UsageServiceLogMaxSpaceGB=1
+UsageServiceLogCutTime=15
+#UsageProvidersMaxTotalSizeInBytes=
+
+#Central Administration
+CentralAdminNTLM=true
+SharedServiceApplicationPoolName=SharePointServices
+
+#SecureStore
+DB-SecureStore-1-NA-SecureStore=SqlServerName
+CreateServiceApplicationSecureStore=true
+#CreateServiceApplicationSecureStorePartitioned=false #SharePoint 2019 does not support multi-tenancy
+EnableMinDBForSecureStore=true
+EnableDataUnattendedAccount=false #No longer needed
+#Security_DataUnattendedAccountAppId= #No longer needed
+#Security_DataUnattendedAccountOwner= #No longer needed
+SecureStoreServiceEnableAudit=true
+SecureStoreServiceAuditPurgeDays=14
+#RootContent= #?PreconfigedDbName
+
+
+#Default Web Application
+DefaultWebApplication=true
+MaximumFileSize=2048
+BrowserCEIPEnabled=False
+GridZoneSMTPServer=smtp.example.com
+TenantXP_OutgoingEmailAddress=sharepoint@example.com
+TenantXP_ReplyToEmailAddress=helpdesk@example.com
+GridZoneSMTPOverrideEnvelopeSender=false
+StaticConfigureWebAppAuth=true
+ConfigureWindowsAuthProvider=true
+WindowsAuthAllowAnonymous=false
+WindowsAuthDisableKerberos=true
+WindowsAuthUseWindowsIntegratedAuthentication=true
+WindowsAuthUseBasicAuthentication=false
+ConfigureFBAClaimProvider=false
+ConfigureIisInternetSettings=false
+EnableSelfServiceSiteCreation=true
+#PageThrottleThreshold=
+BlockNewContentDatabaseWhenMounting=false
+DeclarativeWorkflowsEnabled=true
+EmailNoPermissionParticipantsEnabled=false
+SendDocumentToExternalParticipants=false
+ChangeLogRetentionPeriod=30
+#FBAClaimProviderName=
+#FBAMembershipProviderName=
+#FBARoleProviderName=
+#DefaultContentServiceManagedPaths=test;test2 #?
+DefaultWebApplicationManagedPaths=personal;1;teams;1
+HttpStrictTransportSecurityEnabled=false
+HttpStrictTransportSecurityMaxAge=0x1e1_3380
